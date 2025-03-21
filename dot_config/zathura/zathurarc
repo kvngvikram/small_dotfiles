@@ -1,0 +1,23 @@
+"# Check this out, copied from here: https://git.sr.ht/~troels/dotfiles/tree/master/.config/zathura/zathurarcDark
+
+
+set guioptions  0
+
+set window-title-basename "true"
+#set window-title-home-tilde "true"
+
+set window-title-page "true"
+
+# map <C-r> recolor
+set recolor-darkcolor "#abb2bf"
+set recolor-lightcolor "#262a33"
+set default-bg "#262a33"
+
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+
+# Clipboard setting
+set selection-clipboard clipboard
+map <Backspace> <C-o>

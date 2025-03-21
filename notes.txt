@@ -1,0 +1,43 @@
+indicator multiload line
+C $(percent(cpu.inuse)), L $(decimals(load.avg,2)), M $(size(mem.user)), S $(size(swap.used)), N $(speed(net.down))/$(speed(net.up)), D $(speed(disk.read))/$(speed(disk.write))
+
+
+keyboard shotcuts
+
+Ctrl+Alt+b
+kitty -- tmux a
+
+Ctrl+Alt+n
+kitty sh -c "vim ~/zettelkasten/index.md"
+
+Ctrl+Alt+m
+mattermost-desktop
+
+Ctrl+Alt+c
+Ctrl+Alt+v
+kitty -- ssh -X usernameS@ip.ad.dr.ess
+
+
+Notes
+
+Key board shotcuts tips for brightness and volume if media keyboard is not available
+
+To increase or decrease brightness from commandline
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
+
+To change volume from commandline. you can change the number according to your need
+pactl set-sink-volume @DEFAULT_SINK@ +2000
+pactl set-sink-volume @DEFAULT_SINK@ -2000
+To mute volume from command line
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+For using these dotfiles in a different system/username all the links that point to /home/happy/... should be changed to new username
+And then change the text in the files where there is oldusername happy
+
+find ~/dotfiles -type l -ls | grep '/home/happy/'  | awk '{print $13, $11}' | sed -r 's/happy/newusername/' | xargs -l bash -c 'ln -sf $0 $1'
+sed -i -r 's/happy/newusername/g' ~/dotfiles/dot_local_share/nvim/mason/bin/*
+sed -i -r 's/happy/newusername/g' ~/dotfiles/dot_local_share/applications/*
+
+you can install opencv using the instructions at https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html/drive/folders/1hlO5jsHX-34kGIaLiIlqp4ACdFYT19jp?usp=sharing

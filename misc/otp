@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+log_user 0
+set bash_command "echo -n blablabla"
+spawn bash -c $bash_command
+expect eof
+set hash $expect_out(buffer)
+spawn /home/happy/installs_and_builds/python_venv/aegis/bin/python /home/happy/dotfiles/misc/Aegis-decrypt-master/aegis-decrypt.py --vault aegis-backup-path.json --output otp
+expect "Password:"
+send "$hash\r"
+interact

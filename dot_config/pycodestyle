@@ -1,0 +1,4 @@
+[pycodestyle]
+max-line-length = 190
+[flake8]
+max-complexity = 25
