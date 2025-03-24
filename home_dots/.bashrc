@@ -122,8 +122,8 @@ fi
 # neovim as vim
 alias vim='nvim'
 
-######################### vim as default editor
-VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
+######################### nvim as default editor
+VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 
 ######################### vimdiff with neovim
 alias vimdiff='vim -d'
