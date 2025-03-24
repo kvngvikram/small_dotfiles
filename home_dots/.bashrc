@@ -119,6 +119,9 @@ fi
 [ -r $HOME/.byobu/prompt ] && . $HOME/.byobu/prompt   #byobu-prompt#
 
 
+# neovim as vim
+alias vim='nvim'
+
 ######################### vim as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 

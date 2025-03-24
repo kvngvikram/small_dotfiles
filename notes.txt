@@ -41,3 +41,33 @@ sed -i -r 's/happy/newusername/g' ~/dotfiles/dot_local_share/nvim/mason/bin/*
 sed -i -r 's/happy/newusername/g' ~/dotfiles/dot_local_share/applications/*
 
 you can install opencv using the instructions at https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html/drive/folders/1hlO5jsHX-34kGIaLiIlqp4ACdFYT19jp?usp=sharing
+
+###########################################################################
+##  small dot files startup
+###########################################################################
+# favorites=''
+
+mkdir -p ~/installs_and_builds
+mkdir -p ~/bin
+mkdir -p ~/.local/share
+mkdir -p ~/.config
+
+cp $favorites/small_dotfiles/bin/* ~/bin/
+
+cp $favorites/small_dotfiles/home_dots/.bashrc ~/.bashrc
+cp $favorites/small_dotfiles/home_dots/.gitconfig ~/.gitconfig
+cp $favorites/small_dotfiles/home_dots/.tmux.conf ~/.tmux.conf
+
+
+cp -r $favorites/small_dotfiles/dot_local_share/blesh ~/.local/share/blesh
+
+
+cp -r $favorites/small_dotfiles/dot_config/nvim       ~/.config/nvim
+cp -r $favorites/small_dotfiles/dot_config/lf         ~/.config/lf
+cp -r $favorites/small_dotfiles/dot_config/lazygit    ~/.config/lazygit
+cp -r $favorites/small_dotfiles/dot_config/pip        ~/.config/pip
+cp -r $favorites/small_dotfiles/dot_config/fzf        ~/.config/fzf
+cp $favorites/small_dotfiles/dot_config/pycodestyle ~/.config/pycodestyle
+
+bash -c '~/bin/micromamba create --name temp --root-prefix ~/installs_and_builds/micromamba'
+bash -c '~/bin/micromamba install --name temp --root-prefix ~/installs_and_builds/micromamba nvim tmux lazygit git python=3.12.7'
