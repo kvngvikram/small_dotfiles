@@ -3,14 +3,12 @@ default:
 	echo possible options are: link, force, binaries, 
 link:
 	ln -s $(CURDIR)/home_dots/.bashrc ~/.bashrc
-	ln -s $(CURDIR)/home_dots/.condarc ~/.condarc
+	ln -s $(CURDIR)/home_dots/.gitconfig ~/.gitconfig
 
 	ln -s $(CURDIR)/home_dots/.tmux.conf ~/.tmux.conf
 
 	mkdir -p ~/.local/share
-	mkdir -p ~/Pictures/icons
 
-	ln -s $(CURDIR)/dot_local_share/nvim/ ~/.local/share/nvim
 	ln -s $(CURDIR)/dot_local_share/blesh/ ~/.local/share/blesh
 
 	mkdir -p ~/.config
@@ -24,13 +22,12 @@ link:
 
 force:
 	ln -sf $(CURDIR)/home_dots/.bashrc ~/.bashrc
-	ln -sf $(CURDIR)/home_dots/.condarc ~/.condarc
+	ln -sf $(CURDIR)/home_dots/.gitconfig ~/.gitconfig
 
 	ln -sf $(CURDIR)/home_dots/.tmux.conf ~/.tmux.conf
 
 	mkdir -p ~/.local/share
 
-	rm -rf ~/.local/share/nvim   2> /dev/null  && ln -sf $(CURDIR)/dot_local_share/nvim/ ~/.local/share/nvim
 	rm -rf ~/.local/share/blesh  2> /dev/null  && ln -sf $(CURDIR)/dot_local_share/blesh/ ~/.local/share/blesh
 
 	mkdir -p ~/.config
