@@ -32,6 +32,10 @@ pactl set-sink-volume @DEFAULT_SINK@ -2000
 To mute volume from command line
 pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+For downloading youtube playlists as audio files.
+Install pip install yt-dlp  # a fork of youtube-dl
+Install conda install ffmpeg  # needed to convert to audio files
+Download using yt-dlp -x --audio-quality 0 <url>
 
 For using these dotfiles in a different system/username all the links that point to /home/happy/... should be changed to new username
 And then change the text in the files where there is oldusername happy
